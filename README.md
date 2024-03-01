@@ -31,7 +31,7 @@ root@midgard:~#
 
 You can get the image with following command.
 
->wget https://download.opensuse.org/tumbleweed/appliances/openSUSE-MicroOS.x86_64-ContainerHost-kvm-and-xen.qcow2
+>wget <https://download.opensuse.org/tumbleweed/appliances/openSUSE-MicroOS.x86_64-ContainerHost-kvm-and-xen.qcow2>
 
 I choosed that image because I needed qemu guest agent support.
 
@@ -100,11 +100,13 @@ root@midgard:~#
 
 >**WARNING**: As you noticed, the size of the disk can be voluminous. The previous template, I made with openSUSE Leap image was only 10Go.
 
-## Prepare settings to load Ignition parameters
+## Customize the template
 
-Initialy, I tried to use cloudinit presets of the virtual machine. But the Micro-OS image I choose in order to get qemu guest agent doesn't support it. So I switched to Ignition that is natively supported.
+By default Proxmox use cloud-init to customize VM template. But the Micro-OS image I choose in order to get qemu guest agent doesn't support it. So I switched to **Ignition** that is natively supported by that image.
 
-Now you can set display device. It is possible to use default display (vga) hors to use qxl (spice). I choosed qxl.
+### Set Display device
+
+It is possible to use default display (vga) hors to use qxl (spice). I choosed qxl.
 
 >qm set 9001 --vga qxl
 
@@ -113,10 +115,6 @@ root@midgard:~# qm set 9001 --vga qxl
 update VM 9001: -vga qxl
 root@midgard:~#
 ```
-
-## Customize the template
-
-By default Proxmox use cloud-init to customize VM template. But in our case we use a system that only support "**Ignition**".
 
 ### Activating qemu-guest-agent
 
@@ -155,7 +153,7 @@ root@midgard:~# qm set 9001 --boot order=scsi0
 update VM 9001: -boot order=scsi0
 ```
 
-### Finalize openSUSE MicroOS VM Template
+## Finalize openSUSE MicroOS VM Template
 
 All is ready to transform our VM to a template from which we'll be able to clone VM. To retrieve easily the operating system associated to the template, I name the VM before creating the template. I also decided to add a suffix with the creation date of the template.
 
@@ -420,6 +418,6 @@ Result in JSON format.
 
 If you reach this point, I supposed that you succed to built your first vm from a Proxmox vm template. Congratulations and thank you for the time you spent in reading my article. When I wrote it, I tried several path. One of them was to use Cloud-init settings that is natively supported in Proxmox. But, I understood that was not possible to use it because of the version of the OS image I would used. I plan to write another article where I'll describe steps to build a VM Template with Cloud-init.
 
-Now that we have our container optimized system, we'll going further to build a minimal kubernetes cluster. That will be our next step. 
+Now that we have our container optimized system, we'll going further to build a minimal kubernetes cluster. That will be our next step.
 
-All files are available from my GitHub Account [Here]().
+All files are available from my GitHub Account [Here](here).
