@@ -1,5 +1,7 @@
 # Building a Container-Optimized VM Template with Ignition on Proxmox 8.x
 
+![Banner](media/proxmox-vm-template-with-ignition.drawio.png)
+
 In my recent endeavors, I set up a lab machine powered by a second-hand Dell Optiplex 7040 Mini, featuring an i7 6700t processor. Despite its compact size and silent operation, this machine offers sufficient performance to host multiple virtual machines concurrently. I utilize this setup to experiment with various prototypes, such as running podman containers in rootless mode on an openSUSE Leap VM hosted within it.
 
 A few months ago, I embarked on a journey to learn about building and utilizing Kubernetes infrastructure. Following the course "Architecting with Google Kubernetes Engine" on [Coursera](https://www.coursera.org/) provided invaluable insights and knowledge.
