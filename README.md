@@ -231,4 +231,4 @@ I'd like to note that this article has been improved with the assistance of Chat
 
 Thank you for taking the time to explore this guide. I hope you found it informative and valuable for your virtualization projects. If you have any questions or feedback, feel free to reach out. Happy virtualizing!
 
-All files referenced in this article are available on my [GitHub Account](https://github.com/sdeseille).
+All files referenced in this article are available on my [GitHub Account](https://github.com/sdeseille/proxmox-vm-template-with-ignition).
